@@ -289,7 +289,7 @@ fi
 }
 
 lncf(){
-curl -sSL -o /usr/bin/cf -L https://raw.githubusercontent.com/yonggekkk/warp-yg/main/CFwarp.shh
+curl -sSL -o /usr/bin/cf -L https://raw.githubusercontent.com/yonggekkk/warp-yg/main/CFwarp.sh
 chmod +x /usr/bin/cf
 }
 
