@@ -497,8 +497,8 @@ fi
 if [[ $release != Centos ]]; then 
 apt install net-tools -y
 curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/cloudflare-client.list
-apt update;apt install cloudflare-warp -y
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+sudo apt-get update && sudo apt-get install cloudflare-warp
 fi
 warpip
 echo y | warp-cli registration new
@@ -1179,7 +1179,7 @@ echo
 readp " 请输入数字:" Input
 case "$Input" in     
  1 ) warpinscha;;
- 2 ) [[ $cpu = amd64* ]] && SOCKS5ins || exit;;
+ 2 ) SOCKS5ins;;
  3 ) WGproxy;;
  4 ) WARPun;;
  5 ) WARPonoff;;
