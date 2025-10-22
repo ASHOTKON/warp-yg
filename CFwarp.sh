@@ -1179,7 +1179,7 @@ echo
 readp " 请输入数字:" Input
 case "$Input" in     
  1 ) warpinscha;;
- 2 ) [[ $cpu = amd64* ]] && SOCKS5ins || exit;;
+ 2 ) SOCKS5ins;;
  3 ) WGproxy;;
  4 ) WARPun;;
  5 ) WARPonoff;;
